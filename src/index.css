@@ -67,3 +67,10 @@ body {
   color: var(--text-second-title-anime);
   text-shadow: 0 0 20px #7c3aed, 0 0 40px #7c3aed66;
 }
+
+/* box navBar*/
+
+.box-gradient{
+  background: linear-gradient(135deg, #e91e8c18, #7c3aed18);
+  border: 1px solid #e91e8c33;
+}
