@@ -11,14 +11,14 @@ const navItems = [
 export function NavBar (){
     const navigate = useNavigate();
   return (
-    <div className="min-h-screen bg-background grid-bg flex flex-col" >
+    <div className="bg-background grid-bg flex flex-col" >
         <header className="sticky top-0 z-40 border-b border-[#2a1f44] bg-background/90 backdrop-blur-md">
             {/* Top Nav */}
-            <div className="max-w-screen-xl mx-auto px-4 py-3 flex items-center gap-6">
+            <div className="max-w-7xl mx-auto px-4 py-3 flex items-center gap-6">
                 {/* Logo */}
                 <button onClick={() => navigate('/')} className="flex items-baseline gap-0.5 shrink-0">
                     <span className="font-display text-3xl leading-none neon-text">ANIME</span>
-                    <span className="font-display text-3xl leading-none neon-purple">VERSE</span>
+                    <span className="font-display text-3xl leading-none neon-purple">UNIVERSE</span>
                 </button>
 
                 {/* nav Links */}

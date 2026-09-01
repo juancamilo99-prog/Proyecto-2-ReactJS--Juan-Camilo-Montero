@@ -72,6 +72,21 @@ body {
   font-family: 'JetBrains Mono', monospace;
 }
 
+/* gradientes hero */
+.hero-gradient{
+  background: radial-gradient(ellipse 80% 60% at 50% -10%, #7c3aed44 0%, transparent 70%),
+              radial-gradient(ellipse 50% 40% at 80% 50%, #e91e8c22 0%, transparent 60%);
+}
+
+.neon-cyan{
+  text-shadow: 0 0 20px #00d4ff, 0 0 40px #00d4ff66;
+  color: var(--accent);
+}
+
+.box-hero{
+  background: linear-gradient(135deg, #e91e8c, #7c3aed)
+}
+
 /* box navBar*/
 
 .box-gradient{

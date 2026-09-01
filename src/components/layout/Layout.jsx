@@ -7,7 +7,7 @@ export function Layout() {
         <>
             <div className="min-h-screen bg-background flex flex-col">
                 <NavBar />
-                <main className="flex-1 p-8">
+                <main className="flex-1">
                     <Outlet />
                 </main>
                 <Footer />
