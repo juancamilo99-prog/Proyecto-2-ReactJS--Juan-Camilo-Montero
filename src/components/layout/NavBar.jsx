@@ -1,4 +1,3 @@
-import React from 'react'
 import { Home, Compass, Star, Heart } from 'lucide-react';
 import { NavLink, useNavigate } from 'react-router-dom';
 

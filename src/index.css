@@ -68,6 +68,10 @@ body {
   text-shadow: 0 0 20px #7c3aed, 0 0 40px #7c3aed66;
 }
 
+.font-mono{
+  font-family: 'JetBrains Mono', monospace;
+}
+
 /* box navBar*/
 
 .box-gradient{
