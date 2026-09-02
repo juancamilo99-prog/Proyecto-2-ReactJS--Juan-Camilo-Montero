@@ -4,6 +4,7 @@ import { useAnime } from '../hooks/useAnime'
 
 export const Explore = () => {
 
+  // destructuramos el custom hook 
   const { animes, loading, error } = useAnime();
 
   if(loading){
@@ -20,6 +21,7 @@ export const Explore = () => {
         <h1>Explore</h1>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
           {animes.map((items) => (
+            /* renderizamos AnimeCard por cada anime, pasandole los props que necesita */
             <AnimeCard key={items.mal_id} anime={items} isFavorite={false} onToggleFavorite={() => {}}/>
           ))}
         </div>

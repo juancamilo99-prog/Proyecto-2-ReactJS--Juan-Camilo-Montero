@@ -11,7 +11,7 @@ function AnimeCardComponent ({ anime, isFavorite, onToggleFavorite }) {
 
 
     const [imgLoaded, setImgLoaded] = useState(false);
-     const { mal_id, title, images, score, type, episodes, year, studios, genres, status } = anime;
+    const { mal_id, title, images, score, type, episodes, year, studios, genres, status } = anime;
 
   return (
     <div className="card-glow rounded-xl overflow-hidden bg-card cursor-pointer group relative" onClick={() => onClick(anime)}>
