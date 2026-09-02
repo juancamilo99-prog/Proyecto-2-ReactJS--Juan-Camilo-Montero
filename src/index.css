@@ -93,3 +93,36 @@ body {
   background: linear-gradient(135deg, #e91e8c18, #7c3aed18);
   border: 1px solid #e91e8c33;
 }
+
+/* ANIME CARD */
+
+.sombraCard{
+  box-shadow: "0 0 80px #e91e8c18, 0 32px 64px #000000cc"
+}
+
+.image-card{
+  min-height: 260px;
+}
+
+.skeleton{
+  background: linear-gradient(90deg, #12101e 25%, #1e1a2e 50%, #12101e 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.card-glow{
+  box-shadow: 0 0 0 1px #2a1f44, 0 8px 32px #00000080;
+  transition: all 0.25s ease;
+}
+
+.card-glow:hover {
+  box-shadow: 0 0 0 1px #e91e8c66, 0 0 30px #e91e8c22, 0 16px 40px #00000099;
+  transform: translateY(-4px);
+}
+
+.grid-bg{
+  background-image: 
+        linear-gradient(#2a1f4415 1px, transparent 1px),
+        linear-gradient(90deg, #2a1f4415 1px, transparent 1px);
+  background-size: 40px 40px;
+}
