@@ -65,7 +65,7 @@ function AnimeCardComponent ({ anime, isFavorite, onToggleFavorite }) {
           {genres?.slice(0, 2).map((genre) => (
             <span
               key={genre.mal_id}
-              className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-muted text-muted-foreground"
+              className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-muted text-[#7c3aed]"
             >
               {genre.name}
             </span>
