@@ -2,16 +2,16 @@ import { useState } from 'react'
 import { AnimeCard } from '../components/AnimeCard'
 import { useAnime } from '../hooks/useAnime'
 import { SearchBar } from '../components/SearchBar';
+import { useNavigate } from 'react-router-dom';
 
 export const Explore = () => {
 
   const [search, setSearch] = useState('');
   // destructuramos el custom hook 
   const { animes, loading, error, retry } = useAnime(search);
-  
 
+  const navigate = useNavigate();
 
-  
 
   if(loading){
     return ( <p>Cargando...</p> )
@@ -22,9 +22,14 @@ export const Explore = () => {
       <>
       <div className="text-center py-12">
         <p className="text-muted-foreground mb-4">{error}</p>
-        <button onClick={retry} className="px-4 py-2 rounded-xl bg-primary text-white">
-          Reintentar
-        </button>
+        <div className="flex items-center justify-center gap-2">
+          <button onClick={retry} className="px-4 py-2 rounded-xl bg-primary text-white">
+            Reintentar
+          </button>
+          <button onClick={() => navigate('/')} className="px-4 py-2 rounded-xl bg-primary text-white">
+            Volver al inicio
+          </button>
+        </div>
       </div></>
     )
   }

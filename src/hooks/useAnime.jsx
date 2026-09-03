@@ -15,6 +15,7 @@ export function useAnime (query) {
             try {
                 const data = query ? await searchAnime(query) : await showAllAnimes();
                 setAnimes(data);
+                console.log('se ejecuta una vez')
             } catch (error) {
                 setError(error.message);
             } finally {
