@@ -31,3 +31,16 @@ export async function searchAnime(query) {
 
     return json.data;
 }
+
+export async function topRanking() {
+    
+    const response = await fetch(`${URL_API}/top/anime?limit=10`);
+    
+    if(!response.ok){
+        throw new Error('No se pudo obtener el listado de ranking')
+    }
+
+    const json = await response.json();
+
+    return json.data;
+}
