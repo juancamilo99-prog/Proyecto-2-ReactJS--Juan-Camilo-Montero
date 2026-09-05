@@ -126,3 +126,12 @@ body {
         linear-gradient(90deg, #2a1f4415 1px, transparent 1px);
   background-size: 40px 40px;
 }
+
+/* Top card anime */
+
+.score-badge{
+  background: linear-gradient(135deg, #e91e8c, #7c3aed);
+  font-family: 'Jetbrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+}

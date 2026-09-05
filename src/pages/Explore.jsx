@@ -17,27 +17,16 @@ export const Explore = () => {
     return ( <p>Cargando...</p> )
   }
 
-  if (error) {
-    return (
-      <>
-      <div className="text-center py-12">
-        <p className="text-muted-foreground mb-4">{error}</p>
-        <div className="flex items-center justify-center gap-2">
-          <button onClick={retry} className="px-4 py-2 rounded-xl bg-primary text-white">
-            Reintentar
-          </button>
-          <button onClick={() => navigate('/')} className="px-4 py-2 rounded-xl bg-primary text-white">
-            Volver al inicio
-          </button>
-        </div>
-      </div></>
-    )
-  }
-
   return (
     <>
       <div className="px-6 mb-6 max-w-7xl mx-auto">
         <SearchBar onSearch={setSearch}/>
+        {error && (
+          <div className="flex items-center gap-3 mt-3 mb-2">
+            <p className="text-sm text-red-400">{error}</p>
+            <button onClick={retry} className="text-sm underline text-primary">Reintentar</button>
+          </div>
+        )}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
           {animes.map((items) => (
             /* renderizamos AnimeCard por cada anime, pasandole los props que necesita */
