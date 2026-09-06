@@ -7,7 +7,7 @@ const statusLabels = {
     'Not yet aired' : 'Upcoming',
 };
 
-function AnimeCardComponent ({ anime, isFavorite, onToggleFavorite }) {
+function AnimeCardComponent ({ anime, isFavorite, onToggleFavorite, onClick}) {
 
 
     const [imgLoaded, setImgLoaded] = useState(false);
@@ -39,12 +39,11 @@ function AnimeCardComponent ({ anime, isFavorite, onToggleFavorite }) {
             {type}
           </span>
           <button
-            onClick={() => onToggleFavorite(mal_id)}
-            className="p-1 rounded-full bg-background/80 hover:bg-background transition-colors"
+            onClick={(e) => { e.stopPropagation(); onToggleFavorite(anime) }}
+            className={`p-1 rounded-full bg-background/80 hover:bg-background transition-colors ${isFavorite ? 'text-[#e91e8c]' : 'text-[#8b7aa8] hover:text-[#e91e8c]'}`}
           >
             <Star
               size={14}
-              className={isFavorite ? 'text-primary' : 'text-muted-foreground'}
               fill={isFavorite ? 'currentColor' : 'none'}
             />
           </button>

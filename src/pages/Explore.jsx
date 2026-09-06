@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { AnimeCard } from '../components/AnimeCard'
 import { useAnime } from '../hooks/useAnime'
 import { SearchBar } from '../components/SearchBar';
+import { useFavoritos } from '../context/FavoriteContext';
 import { useNavigate } from 'react-router-dom';
 
 export const Explore = () => {
@@ -10,7 +11,9 @@ export const Explore = () => {
   // destructuramos el custom hook 
   const { animes, loading, error, retry } = useAnime(search);
 
-  const navigate = useNavigate();
+  //definimos el useFavoritos con los props que defiinimos en el FavoriteProviderContext
+  const { favoritos, toggleFavorite, isFavorite } = useFavoritos();
+  const [selected, setSelected] = useState(null);
 
 
   if(loading){
@@ -30,7 +33,8 @@ export const Explore = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
           {animes.map((items) => (
             /* renderizamos AnimeCard por cada anime, pasandole los props que necesita */
-            <AnimeCard key={items.mal_id} anime={items} isFavorite={false} onToggleFavorite={() => {}}/>
+            <AnimeCard key={items.mal_id} anime={items} isFavorite={isFavorite(items.mal_id)} onToggleFavorite={toggleFavorite}
+            onClick={setSelected}/>
           ))}
         </div>
       </div>

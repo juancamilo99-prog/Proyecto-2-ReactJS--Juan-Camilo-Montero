@@ -31,6 +31,7 @@ export function FavoriteContext({ children }) {
                 return [...prev, anime];
             }
         })
+        console.log(favoritos);
     }
 
     function isFavorite(mal_id){
