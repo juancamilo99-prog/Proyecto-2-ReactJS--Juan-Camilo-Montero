@@ -39,6 +39,7 @@
   --border: #2a1f44;
   --ring: #e91e8c;
   --radius: 8px;
+  --font-mono-space: 'JetBrains Mono ' monospace;
 }
 
 * {
@@ -69,7 +70,7 @@ body {
 }
 
 .font-mono{
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono-space)
 }
 
 /* gradientes hero */
@@ -131,7 +132,15 @@ body {
 
 .score-badge{
   background: linear-gradient(135deg, #e91e8c, #7c3aed);
-  font-family: 'Jetbrains Mono', monospace;
+  font-family: var(--font-mono-space);
   font-size: 0.7rem;
   font-weight: 500;
+}
+
+.tag{
+  background: #1e1a2e;
+  border: 1px solid #2a1f44;
+  font-family: var(--font-mono-space);
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
 }

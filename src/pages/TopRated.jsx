@@ -2,12 +2,14 @@ import { Key } from "lucide-react";
 import { AnimeRanking } from "../components/AnimeRanking";
 import { useAnimeRanking } from "../hooks/useAnimeRanking";
 import { useMemo } from "react";
+import { RankingRowComponet } from "../components/RankingRow";
 
 export function TopRated() {
   const { ranking, loading, error } = useAnimeRanking();
 
   // tomamos solo los primeros 3 animes del ranking
   const rankedThree = useMemo(() => ranking.slice(0, 3), [ranking]);
+  const rankedRest = useMemo(() => ranking.slice(3), [ranking]);
 
   if (loading) {
     return <p>Cargando...</p>;
@@ -46,6 +48,24 @@ export function TopRated() {
           />
         ))}
         </div>
+        {/* Table header */}
+        <h2 className="font-display text-2xl neon-purple mb-4 mt-12">FULL RANKINGS</h2>
+        <div className="hidden md:grid grid-cols-[3rem_1fr_5rem_6rem_5rem_7rem] gap-4 px-4 pb-2 border-b border-[#2a1f44] text-xs text-muted-foreground font-mono uppercase tracking-wider">
+          <span>Rank</span>
+          <span>Title</span>
+          <span>Score</span>
+          <span>Studio</span>
+          <span>Episodes</span>
+          <span>Status</span>
+        </div>
+        {rankedRest.map((anime, index) => (
+          <RankingRowComponet 
+          key={anime.mal_id}
+          anime={anime}
+          rank={index + 4}
+          isFavorite={false}
+          onToggleFavorite={() => {}}/>
+        ))}
     </div>
   );
 }
