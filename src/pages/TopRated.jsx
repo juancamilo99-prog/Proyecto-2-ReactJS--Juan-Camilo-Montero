@@ -41,7 +41,7 @@ export function TopRated() {
       <h2 className="font-display text-2xl text-[#FFD700] mb-5 tracking-wide">
         ✦ HALL OF FAME
       </h2>
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid grid-cols-1  md:grid-cols-3 gap-5">
           {rankedThree.map((items, index) => (
           <AnimeRanking
             key={items.mal_id}

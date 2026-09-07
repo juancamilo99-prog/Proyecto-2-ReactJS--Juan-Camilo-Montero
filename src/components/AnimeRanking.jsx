@@ -43,7 +43,7 @@ function RankinCard({ anime, rank, isFavorite, onToggleFavorite, onClick }) {
           </div>
           {/* Info overlay */}
           <div className="absolute bottom-0 left-0 right-0 p-4">
-            <h3 className="font-display text-xl text-white leading-tight mb-1"
+            <h3 className="font-display text-sm text-white leading-tight mb-1 md:text-base"
             style={{ textShadow: "0 0 20px rgba(0,0,0,0.8)"}}>
               {title}
             </h3>
