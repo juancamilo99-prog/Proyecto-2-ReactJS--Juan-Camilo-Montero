@@ -8,7 +8,7 @@ const statusLabels = {
     }
 
 
-export function RankingRowComponet ({ anime, rank, isFavorite, onToggleFavorite}) {
+export function RankingRowComponet ({ anime, rank, isFavorite, onToggleFavorite, onClick}) {
 
     const { mal_id, title, title_japanese, images, score, episodes, studios, status, genres} = anime;
 
@@ -45,8 +45,9 @@ export function RankingRowComponet ({ anime, rank, isFavorite, onToggleFavorite}
             <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${status === 'Airing' ? "bg-green-400" : "bg-[#8b7aa8]"}`} />
             <span className="text-xs text-muted-foreground font-mono">{statusLabels[status] ?? status}</span>
           </span>
-        <button onClick={() => onToggleFavorite(mal_id)} className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity shrink-0">
-            <Star />
+        <button onClick={(e) =>  { e.stopPropagation(); onToggleFavorite(anime) }}
+         className={`ml-1 opacity-0 group-hover:opacity-100 shrink-0 transition-all ${isFavorite ? 'text-[#e91e8c]' : 'text-[#8b7aa8] hover:text-[#e91e8c]'}`}>
+            <Star size={18}  fill={ isFavorite ? 'currentColor' : 'none' }/>
         </button>
     </div>
     </div>

@@ -1,11 +1,15 @@
 import { Key } from "lucide-react";
 import { AnimeRanking } from "../components/AnimeRanking";
 import { useAnimeRanking } from "../hooks/useAnimeRanking";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { RankingRowComponet } from "../components/RankingRow";
+import { useFavoritos } from "../context/FavoriteContext";
 
 export function TopRated() {
   const { ranking, loading, error } = useAnimeRanking();
+
+  const { favoritos, toggleFavorite, isFavorite } = useFavoritos();
+  const [ selected , setSelected ] = useState(null);
 
   // tomamos solo los primeros 3 animes del ranking
   const rankedThree = useMemo(() => ranking.slice(0, 3), [ranking]);
@@ -43,8 +47,9 @@ export function TopRated() {
             key={items.mal_id}
             anime={items}
             rank={index + 1}
-            isFavorite={false}
-            onToggleFavorite={() => {}}
+            isFavorite={isFavorite(items.mal_id)}
+            onToggleFavorite={toggleFavorite}
+            onClick={setSelected}
           />
         ))}
         </div>
@@ -63,8 +68,9 @@ export function TopRated() {
           key={anime.mal_id}
           anime={anime}
           rank={index + 4}
-          isFavorite={false}
-          onToggleFavorite={() => {}}/>
+          isFavorite={isFavorite(anime.mal_id)}
+          onToggleFavorite={toggleFavorite}
+          onClick={setSelected}/>
         ))}
     </div>
   );
