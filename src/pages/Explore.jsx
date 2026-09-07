@@ -3,7 +3,6 @@ import { AnimeCard } from '../components/AnimeCard'
 import { useAnime } from '../hooks/useAnime'
 import { SearchBar } from '../components/SearchBar';
 import { useFavoritos } from '../context/FavoriteContext';
-import { useNavigate } from 'react-router-dom';
 
 export const Explore = () => {
 

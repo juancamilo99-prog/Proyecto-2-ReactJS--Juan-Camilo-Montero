@@ -144,3 +144,9 @@ body {
   font-size: 0.65rem;
   letter-spacing: 0.05em;
 }
+
+/* Favoritos */
+
+.link-browse{
+  background: linear-gradient(135deg, #e91e8c, #7c3aed);
+}
