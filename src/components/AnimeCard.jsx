@@ -7,7 +7,7 @@ const statusLabels = {
     'Not yet aired' : 'Upcoming',
 };
 
-function AnimeCardComponent ({ anime, isFavorite, onToggleFavorite, onClick}) {
+function AnimeCardComponent ({ anime, isFavorite, onToggleFavorite, onClick }) {
 
 
     const [imgLoaded, setImgLoaded] = useState(false);

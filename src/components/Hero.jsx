@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom';
+import { useFavoritos } from '../context/FavoriteContext';
 
 const stats = [
-    {value: '20', label: 'Total Series', color: 'text-primary'},
+    {value: '24', label: 'Total Series', color: 'text-primary'},
     {value: '8.1', label: 'Total Score', color: 'text-secondary'},
     {value: '5', label: 'Currently Watching', color: 'text-accent'},
     {value: '15+', label: 'Genres', color: 'text-primary'}
@@ -10,6 +11,8 @@ const stats = [
 export function Hero() {
 
     const navigate = useNavigate();
+    const { favoritos, toggleFavorite } = useFavoritos();
+
 
   return (
     <section className="hero-gradient text-center py-16 px-4">
@@ -27,7 +30,7 @@ export function Hero() {
             className="box-hero px-6 py-2.5 rounded-xl text-sm font-bold text-white">Explore All Anime</button>
             <button onClick={() => navigate('/favorites')}
                 className="px-6 py-2.5 rounded-xl text-sm font-semibold border border-border text-muted-foreground
-                hover:border-border hover:text-foreground transition-all">My Favorites (0)</button>
+                hover:border-border hover:text-foreground transition-all">My Favorites ({favoritos.length})</button>
         </div>
         <div className="max-w-7xl mx-auto px-4 py-8 grid grid-cols-2 md:grid-cols-4 gap-4">
             {stats.map((stat) => (
