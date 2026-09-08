@@ -1,4 +1,5 @@
-import { Home, Compass, Star, Heart } from 'lucide-react';
+import { Home, Compass, Star, Heart, Menu, X } from 'lucide-react';
+import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 
 const navItems = [
@@ -10,11 +11,12 @@ const navItems = [
 
 export function NavBar (){
     const navigate = useNavigate();
+    const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="bg-background grid-bg flex flex-col" >
         <header className="sticky top-0 z-40 border-b border-[#2a1f44] bg-background/90 backdrop-blur-md">
             {/* Top Nav */}
-            <div className="max-w-7xl mx-auto px-4 py-3 flex items-center gap-6">
+            <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-center gap-6">
                 {/* Logo */}
                 <button onClick={() => navigate('/')} className="flex items-baseline gap-0.5 shrink-0">
                     <span className="font-display text-3xl leading-none neon-text">ANIME</span>
@@ -22,7 +24,7 @@ export function NavBar (){
                 </button>
 
                 {/* nav Links */}
-                <nav className="flex items-center gap-1 flex-1">
+                <nav className="hidden md:flex items-center gap-1 flex-1">
                     {navItems.map((items) => (
                         <NavLink
                             key={items.to}
@@ -47,7 +49,31 @@ export function NavBar (){
                         </NavLink>
                     ))}
                 </nav>
+
+                {/* boton hamburguesa, visible solo en mobile */}
+                <button onClick={() => setIsOpen(!isOpen)}
+                    className="md:hidden ml-auto text-foreground">
+                    {isOpen ? <X size={24}/> : <Menu size={24}/>}
+                </button>
             </div>
+            {/* Panel desplegable solo en mobile, cuando is open es true */}
+                {isOpen && (
+                    <nav className="md:hidden flex flex-col border-t border-border px-4 py-3 gap-1">
+                        {navItems.map((items) => (
+                            <NavLink
+                            key={items.to}
+                            to={items.to}
+                            end={items.to === '/'}
+                            onClick={() => setIsOpen(false)}
+                            className={({ isActive }) => 
+                                `flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-semibold
+                            ${isActive ? 'text-foreground bg-card/60' : 'text-muted-foreground'}`}>
+                                <span className="text-base leading-none">{items.icon}</span>
+                                {items.label}
+                            </NavLink>
+                        ))}
+                    </nav>
+                )}
         </header>
     </div>
   )
