@@ -50,6 +50,7 @@ export function FavoriteContext({ children }) {
         return existeFavorito;
     }, [favoritos])
 
+    //usamos useMemo porque necesitamos memorizar el valor del objeto
     const value = useMemo(() => ({
         favoritos, toggleFavorite, isFavorite
     }), [favoritos, toggleFavorite, isFavorite]);
