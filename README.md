@@ -18,6 +18,8 @@ Proyecto final del máster de React — construido aplicando arquitectura por ca
 ```bash
 npm install
 npm run dev
+
+El proyecto esta colgado en vercel en el siguiente link: https://apiuniverse-anime.vercel.app/
 ```
 
 ## Arquitectura del proyecto
