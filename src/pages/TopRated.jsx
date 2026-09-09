@@ -28,13 +28,13 @@ export function TopRated() {
     <div className="px-6 py-6 max-w-7xl mx-auto">
       <div className="mb-10 text-center">
         <p className="font-mono text-xs text-[#00d4ff] neon-cyan uppercase tracking-widest mb-3">
-          // ranked by community score
+          // Clasificada por puntuación de la comunidad
         </p>
         <h1 className="font-display text-5xl md:text-7xl neon-text mb-2">
           TOP RATED
         </h1>
         <p className="text-muted-foreground text-sm">
-          The highest-score anime in the catalog, ranked by score.
+          El anime con la puntuación más alta del catálogo, ordenado por puntuación.
         </p>
       </div>
 

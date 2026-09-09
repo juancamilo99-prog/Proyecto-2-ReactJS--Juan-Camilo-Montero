@@ -36,12 +36,12 @@ export function Favorites() {
         <div className="mb-8 flex items-end justify-between gap-4 flex-wrap">
           <div>
             <h1 className="font-display text-5xl md:text-6xl neon-text mb-1">
-              MY FAVORITES
+              MIS FAVORITOS
             </h1>
             <p className="text-muted-foreground text-sm font-mono">
               {favoritos.length === 0
-                ? "Your personal watchlis is empty"
-                : `${favoritos.length} series in your watchlist`}
+                ? "Tu lista de favoritos esta vacia."
+                : `${favoritos.length} series en tu lista de seguimiento`}
             </p>
           </div>
         </div>
@@ -51,17 +51,16 @@ export function Favorites() {
               <StarIcon size={64} />
             </div>
             <p className="font-display text-5xl text-[#2a1f44]">
-              NOTHING SAVED
+              NO TIENES ANIMES FAVORITOS
             </p>
             <p className="text-muted-foreground text-sm mb-8 max-w-sm mx-auto">
-              Browse anime and click the ★ icon on any card to save it to your
-              favorites.
+              Explora animes y haz clic con el icono de la estrella ★ en cualquier tarjeta para guardarla en favoritos.
             </p>
             <Link
               to="/explore"
               className="link-browse inline-block px-8 py-3 rounded-xl text-sm font-bold text-white"
             >
-              Browse Anime
+              Buscar Anime
             </Link>
           </div>
         ) : (
@@ -72,7 +71,7 @@ export function Favorites() {
                   {favoritos.length}
                 </p>
                 <p className="text-xs text-muted-foreground font-mono uppercase tracking-wider">
-                  Series Saved
+                  Series Guardadas
                 </p>
               </div>
               <div className="bg-card border border-border rounded-2xl px-5 py-4">
@@ -88,7 +87,7 @@ export function Favorites() {
                   {finished.length}
                 </p>
                 <p className="text-xs text-muted-foreground font-mono uppercase tracking-wider">
-                  Finished Anime
+                  Animes Finalizadas
                 </p>
               </div>
               <div className="bg-card border border-border rounded-2xl px-5 py-4">

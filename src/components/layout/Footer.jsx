@@ -7,7 +7,7 @@ export function Footer(){
             <span className="font-display text-xl neon-purple">UNIVERSE</span>
         </div>
         <p className="font-mono text-xs text-muted-foreground">
-            Juan Camilo Montero · Favorites saved locally in your browser
+            Juan Camilo Montero · Favoritos guardados localmente en tu navegador
         </p>
     </footer>
   )
