@@ -3,10 +3,10 @@ import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 
 const navItems = [
-    { to: '/', label: 'Home', icon: <Home /> },
-    { to: '/explore', label: 'Explore', icon: <Compass /> },
+    { to: '/', label: 'Inicio', icon: <Home /> },
+    { to: '/explore', label: 'Explorar', icon: <Compass /> },
     { to: '/top-rated', label: 'Top Rated', icon: <Star /> },
-    { to: '/favorites', label: 'Favorites', icon: <Heart /> },
+    { to: '/favorites', label: 'Favoritos', icon: <Heart /> },
 ]
 
 export function NavBar (){
